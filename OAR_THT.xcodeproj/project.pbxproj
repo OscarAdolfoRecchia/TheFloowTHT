@@ -13,6 +13,16 @@
 		0A067F731EE86FB30071F34C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F711EE86FB30071F34C /* Main.storyboard */; };
 		0A067F751EE86FB30071F34C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F741EE86FB30071F34C /* Assets.xcassets */; };
 		0A067F781EE86FB30071F34C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F761EE86FB30071F34C /* LaunchScreen.storyboard */; };
+		0A067F821EE94F660071F34C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A067F801EE94F660071F34C /* HomeViewController.m */; };
+		0A067F831EE94F660071F34C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F811EE94F660071F34C /* HomeViewController.xib */; };
+		0A067F891EE950E50071F34C /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A067F871EE950E50071F34C /* TrackViewController.m */; };
+		0A067F8A1EE950E50071F34C /* TrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F881EE950E50071F34C /* TrackViewController.xib */; };
+		0A067F991EE9531E0071F34C /* JListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A067F971EE9531E0071F34C /* JListViewController.m */; };
+		0A067F9A1EE9531E0071F34C /* JListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F981EE9531E0071F34C /* JListViewController.xib */; };
+		0A067F9F1EE9536A0071F34C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A067F9D1EE9536A0071F34C /* DetailViewController.m */; };
+		0A067FA01EE9536A0071F34C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F9E1EE9536A0071F34C /* DetailViewController.xib */; };
+		0A067FA41EE97ECE0071F34C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A067FA31EE97ECE0071F34C /* MapKit.framework */; };
+		0A067FA61EE97F240071F34C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A067FA51EE97F240071F34C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,20 @@
 		0A067F741EE86FB30071F34C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A067F771EE86FB30071F34C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A067F791EE86FB30071F34C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A067F7F1EE94F660071F34C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0A067F801EE94F660071F34C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0A067F811EE94F660071F34C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		0A067F861EE950E50071F34C /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackViewController.h; path = TrackVC/TrackViewController.h; sourceTree = "<group>"; };
+		0A067F871EE950E50071F34C /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackViewController.m; path = TrackVC/TrackViewController.m; sourceTree = "<group>"; };
+		0A067F881EE950E50071F34C /* TrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackViewController.xib; path = TrackVC/TrackViewController.xib; sourceTree = "<group>"; };
+		0A067F961EE9531E0071F34C /* JListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JListViewController.h; sourceTree = "<group>"; };
+		0A067F971EE9531E0071F34C /* JListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JListViewController.m; sourceTree = "<group>"; };
+		0A067F981EE9531E0071F34C /* JListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JListViewController.xib; sourceTree = "<group>"; };
+		0A067F9C1EE9536A0071F34C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = DetailVC/DetailViewController.h; sourceTree = "<group>"; };
+		0A067F9D1EE9536A0071F34C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = DetailVC/DetailViewController.m; sourceTree = "<group>"; };
+		0A067F9E1EE9536A0071F34C /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = DetailVC/DetailViewController.xib; sourceTree = "<group>"; };
+		0A067FA31EE97ECE0071F34C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A067FA51EE97F240071F34C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A067FA61EE97F240071F34C /* CoreLocation.framework in Frameworks */,
+				0A067FA41EE97ECE0071F34C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +70,7 @@
 			children = (
 				0A067F671EE86FB30071F34C /* OAR_THT */,
 				0A067F661EE86FB30071F34C /* Products */,
+				0A067FA21EE97ECE0071F34C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +92,7 @@
 				0A067F711EE86FB30071F34C /* Main.storyboard */,
 				0A067F741EE86FB30071F34C /* Assets.xcassets */,
 				0A067F761EE86FB30071F34C /* LaunchScreen.storyboard */,
+				0A067F841EE94F880071F34C /* UI */,
 				0A067F791EE86FB30071F34C /* Info.plist */,
 				0A067F681EE86FB30071F34C /* Supporting Files */,
 			);
@@ -77,6 +105,68 @@
 				0A067F691EE86FB30071F34C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A067F841EE94F880071F34C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0A067FA11EE953720071F34C /* DetailVC */,
+				0A067F9B1EE953270071F34C /* JListVC */,
+				0A067F8B1EE950F20071F34C /* TrackVC */,
+				0A067F851EE94FA40071F34C /* HomeVC */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		0A067F851EE94FA40071F34C /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A067F7F1EE94F660071F34C /* HomeViewController.h */,
+				0A067F801EE94F660071F34C /* HomeViewController.m */,
+				0A067F811EE94F660071F34C /* HomeViewController.xib */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		0A067F8B1EE950F20071F34C /* TrackVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A067F861EE950E50071F34C /* TrackViewController.h */,
+				0A067F871EE950E50071F34C /* TrackViewController.m */,
+				0A067F881EE950E50071F34C /* TrackViewController.xib */,
+			);
+			name = TrackVC;
+			sourceTree = "<group>";
+		};
+		0A067F9B1EE953270071F34C /* JListVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A067F961EE9531E0071F34C /* JListViewController.h */,
+				0A067F971EE9531E0071F34C /* JListViewController.m */,
+				0A067F981EE9531E0071F34C /* JListViewController.xib */,
+			);
+			name = JListVC;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0A067FA11EE953720071F34C /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A067F9C1EE9536A0071F34C /* DetailViewController.h */,
+				0A067F9D1EE9536A0071F34C /* DetailViewController.m */,
+				0A067F9E1EE9536A0071F34C /* DetailViewController.xib */,
+			);
+			name = DetailVC;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0A067FA21EE97ECE0071F34C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A067FA51EE97F240071F34C /* CoreLocation.framework */,
+				0A067FA31EE97ECE0071F34C /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +228,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A067F8A1EE950E50071F34C /* TrackViewController.xib in Resources */,
 				0A067F781EE86FB30071F34C /* LaunchScreen.storyboard in Resources */,
+				0A067FA01EE9536A0071F34C /* DetailViewController.xib in Resources */,
 				0A067F751EE86FB30071F34C /* Assets.xcassets in Resources */,
 				0A067F731EE86FB30071F34C /* Main.storyboard in Resources */,
+				0A067F831EE94F660071F34C /* HomeViewController.xib in Resources */,
+				0A067F9A1EE9531E0071F34C /* JListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A067F891EE950E50071F34C /* TrackViewController.m in Sources */,
 				0A067F701EE86FB30071F34C /* ViewController.m in Sources */,
 				0A067F6D1EE86FB30071F34C /* AppDelegate.m in Sources */,
+				0A067F991EE9531E0071F34C /* JListViewController.m in Sources */,
 				0A067F6A1EE86FB30071F34C /* main.m in Sources */,
+				0A067F821EE94F660071F34C /* HomeViewController.m in Sources */,
+				0A067F9F1EE9536A0071F34C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
