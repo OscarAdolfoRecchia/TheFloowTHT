@@ -103,7 +103,18 @@ defaults = [NSUserDefaults standardUserDefaults];
     _dvc.dateandtime.text  = [NSString  stringWithString:stringFromDate];
     _dvc.myTitle.text  = [NSString  stringWithString:currJourney];
     
+    NSString  * endDate = [NSString  stringWithFormat:@"Journey_n_%li_end",(indexPath.row)+1];
+    NSDate  *myEndDate =[defaults objectForKey:endDate];
+    
+    NSString *stringFromDateEnd = [formatter stringFromDate:myEndDate];
 
+    
+       _dvc.endTs.text  = [NSString  stringWithString:stringFromDateEnd];
+    
+    
+     
+  
+    
     
 }
 

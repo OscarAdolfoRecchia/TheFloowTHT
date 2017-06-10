@@ -14,8 +14,71 @@
 
 @implementation DetailViewController
 
+
+
+NSMutableArray  *allPoints;
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    
+   // self.myDetMKMap.userTrackingMode = MKUserTrackingModeFollow;
+
+    
+    allPoints  = [[NSMutableArray  alloc]  init];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSString  *arrayName  =  [NSString   stringWithFormat:@"%@_array",_myTitle.text];
+    
+    
+    NSMutableDictionary  *mymd = [defaults objectForKey:arrayName];
+    
+   allPoints = [mymd mutableArrayValueForKey:@"pinpoint"];
+    
+    CLLocationCoordinate2D pinCoordinates;
+    
+    NSMutableDictionary  *coord = [allPoints   objectAtIndex:0];
+        NSArray *alon = [coord valueForKey:@"longitude"];
+    
+    for  (int i =0; i< [alon  count]; i++) {
+        
+   
+
+       
+        
+        NSArray *alon = [coord valueForKey:@"longitude"];
+        NSNumber  *lon  =  [alon  objectAtIndex:i];
+        float flon = [lon floatValue];
+        NSArray *alat = [coord valueForKey:@"latitude"];
+        NSNumber  *lat  =  [alat  objectAtIndex:i];
+
+        float flat = [lat floatValue];
+        pinCoordinates.latitude  = flat;
+        pinCoordinates.longitude  = flon;
+        
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [annotation setCoordinate:pinCoordinates];
+        // [annotation setTitle:@"Start"]; //You can set the subtitle too
+        [self.myDetMKMap addAnnotation:annotation];
+    
+}
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_myDetMKMap setMapType:MKMapTypeStandard];
+    [_myDetMKMap removeAnnotations:_myDetMKMap.annotations];
+    _myDetMKMap.showsUserLocation = NO;
+    [_myDetMKMap setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 

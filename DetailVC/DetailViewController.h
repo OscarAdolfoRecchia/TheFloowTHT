@@ -7,12 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface DetailViewController : UIViewController
+
+
+
+
+
+@interface DetailViewController : UIViewController<MKMapViewDelegate>
+
+
 @property (strong, nonatomic) IBOutlet UILabel *dateandtime;
 
 @property (strong, nonatomic) IBOutlet UILabel *myTitle;
 
 - (IBAction)detBack:(id)sender;
+
+@property (strong, nonatomic) IBOutlet MKMapView *myDetMKMap;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *endTs;
+
 
 @end

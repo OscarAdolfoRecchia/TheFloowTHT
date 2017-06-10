@@ -19,24 +19,46 @@ NSDate  *endDate;
 long n_paths;
 
 NSUserDefaults *defaults;
+NSMutableDictionary  *coordDict;
+NSMutableDictionary  *dictionary;
+NSMutableArray   *array;
+NSMutableArray *arrayObj;
+
+
+-(id)myTrackInit {
+
+    
+     [super initWithNibName:@"TrackViewController" bundle:nil];
+    
+        if ( self ) {
+
+defaults = [NSUserDefaults standardUserDefaults];
+        startDate  = [[NSDate  alloc]  init];
+        endDate  = [[NSDate  alloc]  init];
+        
+        _locationsArray  =  [[NSMutableArray alloc]  init];
+        _mylocations  =  [[NSMutableArray alloc]  init];
+        
+        [_myMap setMapType:MKMapTypeStandard];
+        
+        self.myMap.userTrackingMode = MKUserTrackingModeFollow;
+            coordDict  = [[NSMutableDictionary   alloc] init];
+            array = [[NSMutableArray  alloc] init];
+
+    }
+    return self;
+}
 
 
 - (void)viewDidLoad {
     
-defaults = [NSUserDefaults standardUserDefaults];
-       
+  
+    
     [super viewDidLoad];
     
     
-    startDate  = [[NSDate  alloc]  init];
-    endDate  = [[NSDate  alloc]  init];
-
     
-    _mylocations  =  [[NSMutableArray alloc]  init];
-    
- [_myMap setMapType:MKMapTypeStandard];
-
-    self.myMap.userTrackingMode = MKUserTrackingModeFollow;    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,10 +70,6 @@ defaults = [NSUserDefaults standardUserDefaults];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)Back
-{
-    [self dismissViewControllerAnimated:YES completion:nil]; // ios 6
-}
 
 /*
 #pragma mark - Navigation
@@ -65,18 +83,28 @@ defaults = [NSUserDefaults standardUserDefaults];
 
 - (IBAction)PreviousView:(id)sender {
     
-    [self  dismissViewControllerAnimated:YES completion:nil];
+
+    
+   [self  dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (IBAction)Start:(id)sender {
         [self startLocationManager];
     [_myMap removeAnnotations:_myMap.annotations];
+    coordDict  = [[NSMutableDictionary   alloc] init];
+    array = [[NSMutableArray  alloc] init];
+arrayObj  = [[NSMutableArray  alloc] init];
+    
+    
     
    
 }
 
 - (IBAction)Stop:(id)sender {
+    
+
+
     
     [_locationManager stopUpdatingLocation];
       _locationManager  = nil;
@@ -92,6 +120,8 @@ defaults = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
     
     NSString  *journeyName  =  [NSString   stringWithFormat:@"Journey_n_%li",n_paths];
+    
+    
     
 
     
@@ -113,8 +143,7 @@ defaults = [NSUserDefaults standardUserDefaults];
 
     
         
-        NSValue *locationValue = [NSValue valueWithMKCoordinate:coordinate];
-        [_locationsArray addObject:locationValue];
+ 
         
 
     
@@ -122,9 +151,29 @@ defaults = [NSUserDefaults standardUserDefaults];
      //   [defaults setObject:totalDistance forKey:@"totalDistance"];
     
     [defaults  setObject:jDate forKey:journeyName];
-    // [defaults setDouble:_totalTime forKey:@"totalTime"];
-     //   [defaults setObject:avgSpeedToBeSaved forKey:@"averageSpeed"];
-     //   [defaults setObject:totalCalories forKey:@"totalCalories"];
+    
+    NSString  *endName  =  [NSString   stringWithFormat:@"Journey_n_%li_end",n_paths];
+
+    [defaults  setObject:endDate forKey:endName];
+    
+    
+    
+    NSString  *arrayName  =  [NSString   stringWithFormat:@"Journey_n_%li_array",n_paths];
+
+ 
+    NSMutableDictionary  *thisDict  =  [[NSMutableDictionary  alloc]  init];
+    
+    
+    [ thisDict   setObject:array forKey:@"pinpoint"];
+    
+    
+    
+    [arrayObj   addObject:thisDict];
+    
+    [defaults setObject:arrayObj forKey:arrayName];
+  
+    
+    
         
         [defaults synchronize];
     _myMap.showsUserLocation = NO;
@@ -227,8 +276,9 @@ defaults = [NSUserDefaults standardUserDefaults];
 - (void)locationManager:(CLLocationManager *)manager
       didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
-    
-    
+ 
+    dictionary = [[NSMutableDictionary  alloc] init];
+
     
     CLLocation *newLocation = [locations  lastObject];
     
@@ -240,6 +290,19 @@ defaults = [NSUserDefaults standardUserDefaults];
                 pinCoordinates.longitude = newLocation.coordinate.longitude;
                 pinCoordinates.latitude = newLocation.coordinate.latitude;
                 
+                NSNumber  *fla  = [NSNumber         numberWithFloat: pinCoordinates.latitude];
+                
+                NSNumber  *flo  = [NSNumber         numberWithFloat: pinCoordinates.longitude];
+
+                [dictionary   setValue:fla forKey:@"latitude"];
+                [dictionary   setValue:flo forKey:@"longitude"];
+                
+                
+                
+                
+                
+                [array    addObject:dictionary];
+
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
                 [annotation setCoordinate:pinCoordinates];
                 // [annotation setTitle:@"Start"]; //You can set the subtitle too
@@ -258,6 +321,18 @@ defaults = [NSUserDefaults standardUserDefaults];
                     CLLocationCoordinate2D pinCoordinates;
                     pinCoordinates.longitude = newLocation.coordinate.longitude;
                     pinCoordinates.latitude = newLocation.coordinate.latitude;
+                    
+                    NSNumber  *fla  = [NSNumber         numberWithFloat: pinCoordinates.latitude];
+                    
+                    NSNumber  *flo  = [NSNumber         numberWithFloat: pinCoordinates.longitude];
+                    
+                    [dictionary   setValue:fla forKey:@"latitude"];
+                    [dictionary   setValue:flo forKey:@"longitude"];
+                    
+                    
+                    
+                                     [array    addObject:dictionary];
+                    
                     
                     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
                     [annotation setCoordinate:pinCoordinates];

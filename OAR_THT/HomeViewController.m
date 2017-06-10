@@ -14,9 +14,11 @@
 @end
 
 @implementation HomeViewController
+TrackViewController  *trackVc;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+      trackVc  =  [[TrackViewController  alloc]  myTrackInit];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -24,6 +26,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -38,11 +43,12 @@
 - (IBAction)ActSel:(id)sender {
     
  
-    TrackViewController * trackVc = [[TrackViewController alloc] initWithNibName:@"TrackViewController" bundle:nil];
-
+  
     
     
     [self   presentViewController:trackVc animated:YES completion:nil];
+    
+    trackVc.parentView  = self;
 }
 
 - (IBAction)JourneyListSel:(id)sender {

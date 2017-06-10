@@ -11,6 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 
+@class HomeViewController;
+
+
 @interface TrackViewController : UIViewController<CLLocationManagerDelegate,
 MKMapViewDelegate>
 
@@ -29,6 +32,8 @@ MKMapViewDelegate>
 - (IBAction)Start:(id)sender;
 - (IBAction)Stop:(id)sender;
 
+@property (strong, nonatomic)  HomeViewController  *parentView;
 
+- (id) myTrackInit;
 
 @end
