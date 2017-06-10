@@ -67,6 +67,17 @@ NSMutableArray  *allPoints;
     
 }
     
+    
+    MKMapRect zoomRect = MKMapRectNull;
+    for (id <MKAnnotation> annotation in _myDetMKMap.annotations)
+    {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+        zoomRect = MKMapRectUnion(zoomRect, pointRect);
+    }
+    [_myDetMKMap setVisibleMapRect:zoomRect animated:YES];
+    
+    
 }
 
 
