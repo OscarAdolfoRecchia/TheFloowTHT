@@ -24,7 +24,7 @@ NSMutableDictionary  *dictionary;
 NSMutableArray   *array;
 NSMutableArray *arrayObj;
 
-BOOL pinColourRed = NO;
+BOOL isStart = NO;
 
 -(id)myTrackInit {
 
@@ -83,6 +83,9 @@ defaults = [NSUserDefaults standardUserDefaults];
 
 - (IBAction)Start:(id)sender {
     
+    if (!isStart)
+    {
+    
     startDate  = [[NSDate  alloc]  init];
     endDate  = [[NSDate  alloc]  init];
     
@@ -96,7 +99,9 @@ arrayObj  = [[NSMutableArray  alloc] init];
     [self enableLocationServices];
    
     [self startLocationManager];
-   
+        
+        isStart  = YES;
+    }
     
    
 }
@@ -104,8 +109,8 @@ arrayObj  = [[NSMutableArray  alloc] init];
 - (IBAction)Stop:(id)sender {
     
 
-
-    
+if (isStart)
+{
     [_locationManager stopUpdatingLocation];
       _locationManager  = nil;
    NSLog(@"Location Services disabled.");
@@ -171,7 +176,12 @@ arrayObj  = [[NSMutableArray  alloc] init];
         
         [defaults synchronize];
     _myMap.showsUserLocation = NO;
+    
+    isStart  = NO;
   
+}
+    
+    
     
 }
 
@@ -285,8 +295,7 @@ arrayObj  = [[NSMutableArray  alloc] init];
             // update distance
             if (self.mylocations.count > 0) {
                 
-                pinColourRed = YES;
-
+        
                 CLLocationCoordinate2D pinCoordinates;
                 pinCoordinates.longitude = newLocation.coordinate.longitude;
                 pinCoordinates.latitude = newLocation.coordinate.latitude;
@@ -319,8 +328,7 @@ arrayObj  = [[NSMutableArray  alloc] init];
                 if ( self.mylocations.count ==0)
                 {
                     
-                    pinColourRed = NO;
-                    
+                                
                     CLLocationCoordinate2D pinCoordinates;
                     pinCoordinates.longitude = newLocation.coordinate.longitude;
                     pinCoordinates.latitude = newLocation.coordinate.latitude;
@@ -361,28 +369,6 @@ arrayObj  = [[NSMutableArray  alloc] init];
                    }
     }
     
-
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
-{
-    MKPinAnnotationView *annView=[[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
-    
-   
-
-    
-    if (pinColourRed)
-    {
-    annView.pinColor = MKPinAnnotationColorRed;
-    }
-    else
-    {
-        
-        annView.pinColor = MKPinAnnotationColorGreen;
-   
-    }
- 
-      return annView;
-  }
-
 
 
 
