@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The tracking cannot be executed without your consent</string>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

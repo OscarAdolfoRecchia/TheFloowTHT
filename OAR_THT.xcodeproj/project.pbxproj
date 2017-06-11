@@ -23,6 +23,7 @@
 		0A067FA01EE9536A0071F34C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A067F9E1EE9536A0071F34C /* DetailViewController.xib */; };
 		0A067FA41EE97ECE0071F34C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A067FA31EE97ECE0071F34C /* MapKit.framework */; };
 		0A067FA61EE97F240071F34C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A067FA51EE97F240071F34C /* CoreLocation.framework */; };
+		0A273FD71EEDD34D00C35CCE /* Circle_Orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A273FD61EEDD34D00C35CCE /* Circle_Orange.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0A067F9E1EE9536A0071F34C /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = DetailVC/DetailViewController.xib; sourceTree = "<group>"; };
 		0A067FA31EE97ECE0071F34C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A067FA51EE97F240071F34C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A273FD61EEDD34D00C35CCE /* Circle_Orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle_Orange.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		0A067F681EE86FB30071F34C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A273FD61EEDD34D00C35CCE /* Circle_Orange.png */,
 				0A067F691EE86FB30071F34C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A067F8A1EE950E50071F34C /* TrackViewController.xib in Resources */,
+				0A273FD71EEDD34D00C35CCE /* Circle_Orange.png in Resources */,
 				0A067F781EE86FB30071F34C /* LaunchScreen.storyboard in Resources */,
 				0A067FA01EE9536A0071F34C /* DetailViewController.xib in Resources */,
 				0A067F751EE86FB30071F34C /* Assets.xcassets in Resources */,
@@ -415,6 +419,7 @@
 				0A067F7E1EE86FB30071F34C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

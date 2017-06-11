@@ -22,7 +22,7 @@ NSMutableArray  *allPoints;
 -(void)viewWillAppear:(BOOL)animated
 {
     
-    
+     _myDetMKMap.showsUserLocation = NO;
    // self.myDetMKMap.userTrackingMode = MKUserTrackingModeFollow;
 
     
@@ -86,7 +86,7 @@ NSMutableArray  *allPoints;
     [_myDetMKMap setMapType:MKMapTypeStandard];
     [_myDetMKMap removeAnnotations:_myDetMKMap.annotations];
     _myDetMKMap.showsUserLocation = NO;
-    [_myDetMKMap setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [_myDetMKMap setUserTrackingMode:MKUserTrackingModeFollow animated:NO];
 
     
     
