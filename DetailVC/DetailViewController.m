@@ -44,6 +44,9 @@ NSMutableArray  *allPoints;
     NSMutableDictionary  *coord = [allPoints   objectAtIndex:0];
         NSArray *alon = [coord valueForKey:@"longitude"];
     
+    
+    // loop on all the user data stored entries in order to display the given journey
+    
     for  (int i =0; i< [alon  count]; i++) {
         
    

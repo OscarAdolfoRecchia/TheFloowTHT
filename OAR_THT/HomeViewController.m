@@ -42,7 +42,7 @@ TrackViewController  *trackVc;
 
 - (IBAction)ActSel:(id)sender {
     
- 
+ // push button to present view of path tracking
   
     
     
@@ -52,6 +52,9 @@ TrackViewController  *trackVc;
 }
 
 - (IBAction)JourneyListSel:(id)sender {
+    
+    
+    //  push button to select journey list
     
   JListViewController *  jListVc = [[JListViewController alloc] initWithNibName:@"JListViewController" bundle:nil];
     

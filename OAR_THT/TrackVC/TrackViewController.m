@@ -116,6 +116,11 @@ if (isStart)
    NSLog(@"Location Services disabled.");
     // detect timestamp
     //  save all data on userdefaults
+    // start time
+    // stop time
+    // journey name
+    // annotation coordinates  in order to recall the trip on the history list
+    
     
     n_paths = [defaults integerForKey:@"n_paths"];
     
@@ -147,7 +152,6 @@ if (isStart)
 
     
     
-     //   [defaults setObject:totalDistance forKey:@"totalDistance"];
     
     [defaults  setObject:jDate forKey:journeyName];
     
@@ -285,6 +289,10 @@ if (isStart)
       didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
  
+    
+    //  save the point coordinates to display and store
+    
+    
     dictionary = [[NSMutableDictionary  alloc] init];
 
     

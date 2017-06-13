@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   
+   // After splashscreen now I  launch the root VC
     HomeViewController *baseVc = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     
     [self.window setRootViewController:baseVc];
